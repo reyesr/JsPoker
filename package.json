@@ -17,8 +17,10 @@
   "author": "Mark Percival <m@mdp.im> (@mdp)",
   "license": "MIT",
   "dependencies": {
-    "machine-poker": "~0.5.1",
-    "async": "~0.2.9"
+    "async": "~0.2.9",
+    "body-parser": "^1.10.2",
+    "express": "^4.11.0",
+    "machine-poker": "~0.5.1"
   },
   "devDependencies": {
     "mocha": "~1.14.0"
