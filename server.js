@@ -5,7 +5,12 @@ var bodyParser = require("body-parser");
 var fs = require("fs"),
     path = require("path");
 
-var port = 80;
+var port = process.env.PORT || 8080;
+
+var displayedPort = port;
+if (process.env.DISPLAYED_PORT) {
+    displayedPort = process.env.DISPLAYED_PORT;
+}
 
 server.listen(port);
 app.use(bodyParser.json());
@@ -42,7 +47,7 @@ app.use("/", function (req, res) {
     var index_html = "<html><body><pre>";
     index_html += "Hi. I serve the following bots:\n\n";
     robots.forEach(function(robot){
-        index_html += req.protocol + "://" + req.hostname + (port!=80?":"+port:"") + "/bot/" + robot.name + "\n";
+        index_html += req.protocol + "://" + req.hostname + (displayedPort!=80?":"+displayedPort:"") + "/bot/" + robot.name + "\n";
     });
     index_html += "</pre></body></html>";
     res.status(200).send(index_html);
