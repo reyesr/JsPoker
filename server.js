@@ -5,7 +5,7 @@ var bodyParser = require("body-parser");
 var fs = require("fs"),
     path = require("path");
 
-var port = 3003;
+var port = 80;
 
 server.listen(port);
 app.use(bodyParser.json());
